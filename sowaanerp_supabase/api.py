@@ -148,8 +148,8 @@ def sync_calls_to_leads():
     site_config = frappe.get_site_config()
     company_name = None
     # Check if 'domains' key exists and has at least one value
-    if "domains" in site_config and site_config["domains"]:
-        company_name = site_config["domains"][0]
+    if "host_name" in site_config and site_config["host_name"]:
+        company_name = site_config["host_name"]
         
 
 
