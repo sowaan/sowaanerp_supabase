@@ -187,7 +187,7 @@ def sync_calls_to_leads():
                         "description": f"Lead assigned from contact {contact_id}"
                     })
                 except Exception as e:
-                    frappe.log_error(f"Failed to assign Lead {lead.name} to {assign_email}: {str(e)}")
+                    frappe.log_error(f"Failed to assign Lead {lead} to {assign_email}: {str(e)}")
             if call_notes:
                 lead_doc = frappe.get_doc("Lead", lead)
                 lead_doc.notes = []
@@ -229,6 +229,8 @@ def sync_calls_to_leads():
                 # Only set if erp_field is valid and value is not None
                 if erp_field and value is not None:
                     lead_doc.set(erp_field, value)
+
+            lead_doc.save()
 
             if assign_email:
                 try:
