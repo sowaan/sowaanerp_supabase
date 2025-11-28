@@ -231,6 +231,7 @@ def sync_calls_to_leads():
                     lead_doc.set(erp_field, value)
 
             lead_doc.save()
+            frappe.db.commit()
 
             if assign_email:
                 try:
