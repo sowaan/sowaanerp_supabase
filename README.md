@@ -10,7 +10,7 @@ This app syncs call and contact data from Supabase to ERPNext Lead records.
    
    ```json
    {
-     "host_name": "https://your-erp-site.com"
+     "host_name": "your-erp-site.com"
    }
 
 ### Installation
